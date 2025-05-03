@@ -1,0 +1,20 @@
+generations:
+  - name: "First Generation"
+    start_year: 1996
+    end_year: 1998
+    description: "The first generation TL replaced the Acura Vigor as the brand's mid-size luxury sedan. Available with either a 2.5L inline-five cylinder or 3.2L V6 engine, it offered a comfortable ride, premium features, and Acura's reputation for reliability in a conservatively styled package."
+
+  - name: "Second Generation"
+    start_year: 1999
+    end_year: 2003
+    description: "The second generation TL featured more distinctive styling and came exclusively with a 3.2L V6 engine producing up to 260 HP in Type-S form. This generation established the TL as a sportier alternative to competitors like the Lexus ES, offering a blend of luxury, technology, and performance, particularly in the enthusiast-oriented Type-S variant."
+
+  - name: "Third Generation"
+    start_year: 2004
+    end_year: 2008
+    description: "Often considered the most successful TL generation, the third-gen model featured bold styling and class-leading technology. Powered by a 3.2L V6 with 270 HP (or 286 HP in Type-S form), it came with a wealth of standard features including a pioneering DVD-Audio surround sound system. The Type-S variant added a 3.5L V6, sportier suspension, and distinctive styling elements."
+
+  - name: "Fourth Generation"
+    start_year: 2009
+    end_year: 2014
+    description: "The final TL generation featured controversial styling with a prominent shield grille and angular body lines. It was larger than its predecessor and offered a powerful SH-AWD (Super Handling All-Wheel Drive) variant with a 3.7L V6 producing 305 HP. A facelift in 2012 softened the divisive styling. This generation was eventually replaced by the TLX, which combined the TL and TSX model lines."
