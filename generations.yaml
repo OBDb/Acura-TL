@@ -1,3 +1,6 @@
+references:
+  - "https://en.wikipedia.org/wiki/Acura_TL"
+
 generations:
   - name: "First Generation"
     start_year: 1996
