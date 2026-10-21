@@ -1,182 +1,1326 @@
-{ "commands": [
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2203"}, "freq": 1,
-  "signals": [
-    {"id": "TL_EOP_PCM", "path": "Engine", "fmt": {"bix": 72, "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Oil pressure"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2240"}, "freq": 30,
-  "signals": [
-    {"id": "TL_BAT_DIST", "path": "Battery", "fmt": {"bix": 80, "len": 32, "max": 250000, "unit": "kilometers" }, "name": "Distance traveled since last charge"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2610"}, "freq": 1,
-  "signals": [
-    {"id": "TL_GENERATOR_PCM", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Generator"},
-    {"id": "TL_AC_CLU_PCM",    "path": "Engine", "fmt": {"bix": 262, "len": 1, "max": 1,                           "unit": "offon"   }, "name": "A/C clutch"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2611"}, "freq": 1,
-  "signals": [
-    {"id": "TL_AIRGAS_RAT_PCM", "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535, "nullmax": 29.4, "unit": "scalar" }, "name": "Air/gas ratio"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2612"}, "freq": 1,
-  "signals": [
-    {"id": "TL_VTEC_VALVE_CTRL_PCM", "path": "Engine",       "fmt": {"bix": 175, "len": 1, "max": 1,   "unit": "offon"  }, "name": "VTEC valve control"},
-    {"id": "TL_CURRENT_GEAR_VAR_2",  "path": "Transmission", "fmt": {"bix": 352, "len": 8, "max": 255, "unit": "scalar" }, "name": "Current gear var.2"},
-    {"id": "TL_CURRENT_GEAR_VAR_3",  "path": "Transmission", "fmt": {"bix": 368, "len": 8, "max": 255, "unit": "scalar" }, "name": "Current gear var.3"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2613"}, "freq": 1,
-  "signals": [
-    {"id": "TL_AC_P", "path": "Climate", "fmt": {"bix": 120, "len": 16, "max": 4000, "unit": "kilopascal" }, "name": "A/C pressure"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2615"}, "freq": 1,
-  "signals": [
-    {"id": "TL_ACTIVE_CYL_PCM", "path": "Engine", "fmt": {"bix": 400, "len": 8, "max": 6, "unit": "scalar" }, "name": "Active cylinders"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2660"}, "freq": 30,
-  "signals": [
-    {"id": "TL_ODO_PCM",   "path": "Trips",  "fmt": {"bix": 344, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer",                "suggestedMetric": "odometer"},
-    {"id": "TL_RUNTM_PCM", "path": "Clocks", "fmt": {"bix": 368, "len": 16, "max": 65535,    "unit": "seconds"    }, "name": "Time since engine start", "description": "How long it's been since the engine started."}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2661"}, "freq": 1,
-  "signals": [
-    {"id": "TL_FUELAIR_CAR_PCM", "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "div": 2229.08163265, "unit": "scalar" }, "name": "Fuel/air commanded equivalence ratio"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2662"}, "freq": 1,
-  "signals": [
-    {"id": "TL_KNOCK_CTRL_PCM", "path": "ECU",    "fmt": {"bix": 80,  "len": 8, "max": 2,   "mul": 2,   "div": 255, "unit": "scalar"  }, "name": "Knock control"},
-    {"id": "TL_VTC_DUTY_PCM",   "path": "Engine", "fmt": {"bix": 224, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Variable valve timing duty"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2663"}, "freq": 1,
-  "signals": [
-    {"id": "TL_MIS_CNT_1_VAR_3_PCM", "path": "Engine", "fmt": {"bix": 160, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #1, variant 3"},
-    {"id": "TL_MIS_CNT_2_VAR_3_PCM", "path": "Engine", "fmt": {"bix": 176, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #2, variant 3"},
-    {"id": "TL_MIS_CNT_3_VAR_3_PCM", "path": "Engine", "fmt": {"bix": 192, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #3, variant 3"},
-    {"id": "TL_MIS_CNT_4_VAR_3_PCM", "path": "Engine", "fmt": {"bix": 208, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #4, variant 3"},
-    {"id": "TL_MIS_CNT_5_VAR_3_PCM", "path": "Engine", "fmt": {"bix": 224, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #5, variant 3"},
-    {"id": "TL_MIS_CNT_6_VAR_3_PCM", "path": "Engine", "fmt": {"bix": 240, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #6, variant 3"},
-    {"id": "TL_MIS_1_PCM",           "path": "ECU",    "fmt": {"bix": 272, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 1"},
-    {"id": "TL_MIS_2_PCM",           "path": "ECU",    "fmt": {"bix": 288, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 2"},
-    {"id": "TL_MIS_3_PCM",           "path": "ECU",    "fmt": {"bix": 304, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 3"},
-    {"id": "TL_MIS_4_PCM",           "path": "ECU",    "fmt": {"bix": 320, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 4"},
-    {"id": "TL_MIS_5_PCM",           "path": "ECU",    "fmt": {"bix": 336, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 5"},
-    {"id": "TL_MIS_6_PCM",           "path": "ECU",    "fmt": {"bix": 352, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 6"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2666"}, "freq": 5,
-  "signals": [
-    {"id": "TL_OIL_LEVEL_PCM", "path": "Engine", "fmt": {"bix": 48,  "len": 8, "max": 127.5,             "div": 2,             "unit": "millimeters" }, "name": "Engine oil level"},
-    {"id": "TL_EOT_VAR_3_PCM", "path": "Engine", "fmt": {"bix": 88,  "len": 8, "max": 215,   "min": -40,           "add": -40, "unit": "celsius"     }, "name": "Engine oil temperature, variant 3"},
-    {"id": "TL_EOT_VAR_4_PCM", "path": "Engine", "fmt": {"bix": 112, "len": 8, "max": 215,   "min": -40,           "add": -40, "unit": "celsius"     }, "name": "Engine oil temperature, variant 4"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "266C"}, "freq": 1,
-  "signals": [
-    {"id": "TL_MIS_CNT_1_VAR_1_PCM", "path": "Engine", "fmt": {"bix": 48, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #1, variant 1"},
-    {"id": "TL_MIS_CNT_2_VAR_1_PCM", "path": "Engine", "fmt": {"bix": 56, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #2, variant 1"},
-    {"id": "TL_MIS_CNT_3_VAR_1_PCM", "path": "Engine", "fmt": {"bix": 64, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #3, variant 1"},
-    {"id": "TL_MIS_CNT_4_VAR_1_PCM", "path": "Engine", "fmt": {"bix": 72, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #4, variant 1"},
-    {"id": "TL_MIS_CNT_5_VAR_1_PCM", "path": "Engine", "fmt": {"bix": 80, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #5, variant 1"},
-    {"id": "TL_MIS_CNT_6_VAR_1_PCM", "path": "Engine", "fmt": {"bix": 88, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #6, variant 1"}
-  ]},
-{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "266D"}, "freq": 1,
-  "signals": [
-    {"id": "TL_AIR_FUEL_MIXTURE", "path": "Fuel", "fmt": {"bix": 72, "len": 8, "max": 127, "div": 2, "unit": "percent" }, "name": "Air-fuel mixture heater"}
-  ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2610"}, "freq": 1,
-  "signals": [
-    {"id": "TL_GENERATOR", "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Generator"},
-    {"id": "TL_AC_CLUTCH", "path": "Engine", "fmt": {"bix": 262, "len": 1, "max": 1,                           "unit": "offon"   }, "name": "A/C clutch"}
-  ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2611"}, "freq": 5,
-  "signals": [
-    {"id": "TL_FUEL_AIR_RATIO", "path": "Fuel",   "fmt": {           "len": 8,  "max": 255,                             "unit": "scalar" }, "name": "Fuel/air commanded equivalence ratio"},
-    {"id": "TL_AIRGAS_RATIO",   "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535, "unit": "scalar" }, "name": "Air/gas ratio"}
-  ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2612"}, "freq": 0.25,
-  "signals": [
-    {"id": "TL_VTEC_CTRL", "path": "ECU", "fmt": {"bix": 168, "len": 8, "max": 255, "unit": "scalar" }, "name": "Variable valve control"}
-  ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2660"}, "freq": 5,
-  "signals": [
-    {"id": "TL_ODO",   "path": "Trips",  "fmt": {"bix": 344, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer",                "suggestedMetric": "odometer"},
-    {"id": "TL_RUNTM", "path": "Clocks", "fmt": {"bix": 368, "len": 16, "max": 65535,    "unit": "seconds"    }, "name": "Time since engine start", "description": "How long it's been since the engine started."}
-  ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2661"}, "freq": 0.25,
-  "signals": [
-    {"id": "TL_FUELAIR_CAR", "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "div": 2229.08163265, "unit": "scalar" }, "name": "Fuel/air commanded equivalence ratio"}
-  ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2662"}, "freq": 0.25,
-  "signals": [
-    {"id": "TL_KNOCK_CONTROL", "path": "Engine", "fmt": {"bix": 80,  "len": 8, "max": 2,   "mul": 2,   "div": 255, "unit": "unknown" }, "name": "Knock control",                "description": "ECU's determination of fuel quality."},
-    {"id": "TL_VTC_DUTY",      "path": "Engine", "fmt": {"bix": 224, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Variable timing control duty", "description": "How long the valve is energized versus how long it's not energized, expressed as a percentage. The higher the duty percentage, the more the cam timing is advanced toward its maximum potential."}
-  ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2663"}, "freq": 1,
-  "signals": [
-    {"id": "TL_MIS_1", "path": "Engine", "fmt": {"bix": 272, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #1"},
-    {"id": "TL_MIS_2", "path": "Engine", "fmt": {"bix": 288, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #2"},
-    {"id": "TL_MIS_3", "path": "Engine", "fmt": {"bix": 304, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #3"},
-    {"id": "TL_MIS_4", "path": "Engine", "fmt": {"bix": 320, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #4"},
-    {"id": "TL_MIS_5", "path": "Engine", "fmt": {"bix": 336, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #5"},
-    {"id": "TL_MIS_6", "path": "Engine", "fmt": {"bix": 352, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #6"}
-  ]},
-{ "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2610"}, "freq": 1,
-  "signals": [
-    {"id": "TL_GEN",    "path": "Engine", "fmt": {"bix": 184, "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Generator"},
-    {"id": "TL_AC_CLU", "path": "Engine", "fmt": {"bix": 262, "len": 1, "max": 1,                         "unit": "offon"   }, "name": "Air conditioner clutch"}
-  ]},
-{ "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2611"}, "freq": 5,
-  "signals": [
-    {"id": "TL_AIRGAS_RATIO_V2", "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535, "unit": "scalar" }, "name": "Air/gas ratio"}
-  ]},
-{ "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2612"}, "freq": 1,
-  "signals": [
-    {"id": "TL_VTEC_VALVE_CTRL", "path": "Engine", "fmt": {"bix": 175, "len": 1, "max": 1, "unit": "offon" }, "name": "VTEC valve control", "description": "VTEC works by switching between two (or sometimes three) different camshaft profiles by engaging or disengaging a mechanism that locks the valve rocker arms together. When VTEC is OFF, the engine operates using the standard cam profile, which is typically optimized for fuel efficiency and low-end torque. When VTEC is ON, the system switches to a high-performance cam profile that allows the valves to open wider and for a longer duration, enabling better airflow at higher RPMs for increased power."}
-  ]},
-{ "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2613"}, "freq": 1,
-  "signals": [
-    {"id": "TL_EVAP_PC_LOAD", "path": "Engine", "fmt": {"bix": 48,  "len": 8,  "max": 99.61, "mul": 100, "div": 255, "unit": "percent" }, "name": "Evaporative purge control load"},
-    {"id": "TL_AC_P_RAW_CNT", "path": "Engine", "fmt": {"bix": 120, "len": 16, "max": 65535,                         "unit": "scalar"  }, "name": "Air conditioning pressure, raw count"}
-  ]},
-{ "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2660"}, "freq": 5,
-  "signals": [
-    {"id": "TL_RUNTM_V2", "path": "Clocks", "fmt": {"bix": 368, "len": 16, "max": 65535, "unit": "seconds" }, "name": "Time since engine start", "description": "How long it's been since the engine started."}
-  ]},
-{ "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2661"}, "freq": 1,
-  "signals": [
-    {"id": "TL_ELD_ELEC_LOAD_DUTY", "path": "Engine", "fmt": {"bix": 136, "len": 8, "max": 127, "div": 2, "unit": "amps" }, "name": "Electric load detector current"}
-  ]},
-{ "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2662"}, "freq": 5,
-  "signals": [
-    {"id": "TL_KNOCK_CONTROL_V2", "path": "Engine", "fmt": {"bix": 80, "len": 8,  "max": 1.99,             "mul": 1.99, "div": 255,             "unit": "scalar"  }, "name": "Knock control"},
-    {"id": "TL_CAT_T",            "path": "Engine", "fmt": {"bix": 96, "len": 16, "max": 1500, "min": -40,              "div": 10,  "add": -40, "unit": "celsius" }, "name": "Catalyst temperature"}
-  ]},
-{ "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2663"}, "freq": 1,
-  "signals": [
-    {"id": "TL_MISFIRE_COUNT_1_VAR_3", "path": "Engine", "fmt": {"bix": 160, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #1, variant 3"},
-    {"id": "TL_MISFIRE_COUNT_2_VAR_3", "path": "Engine", "fmt": {"bix": 176, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #2, variant 3"},
-    {"id": "TL_MISFIRE_COUNT_3_VAR_3", "path": "Engine", "fmt": {"bix": 192, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #3, variant 3"},
-    {"id": "TL_MISFIRE_COUNT_4_VAR_3", "path": "Engine", "fmt": {"bix": 208, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #4, variant 3"},
-    {"id": "TL_MISFIRE_COUNT_5_VAR_3", "path": "Engine", "fmt": {"bix": 224, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #5, variant 3"},
-    {"id": "TL_MISFIRE_COUNT_6_VAR_3", "path": "Engine", "fmt": {"bix": 240, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #6, variant 3"},
-    {"id": "TL_MISFIRE_COUNT_1_VAR_2", "path": "Engine", "fmt": {"bix": 272, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #1, variant 2"},
-    {"id": "TL_MISFIRE_COUNT_2_VAR_2", "path": "Engine", "fmt": {"bix": 288, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #2, variant 2"},
-    {"id": "TL_MISFIRE_COUNT_3_VAR_2", "path": "Engine", "fmt": {"bix": 304, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #3, variant 2"},
-    {"id": "TL_MISFIRE_COUNT_4_VAR_2", "path": "Engine", "fmt": {"bix": 320, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #4, variant 2"},
-    {"id": "TL_MISFIRE_COUNT_5_VAR_2", "path": "Engine", "fmt": {"bix": 336, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #5, variant 2"},
-    {"id": "TL_MISFIRE_COUNT_6_VAR_2", "path": "Engine", "fmt": {"bix": 352, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count #6, variant 2"}
-  ]},
-{ "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "266C"}, "freq": 1,
-  "signals": [
-    {"id": "TL_MISFIRE_COUNT_1_VAR_1", "path": "Engine", "fmt": {"bix": 48, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #1, variant 1"},
-    {"id": "TL_MISFIRE_COUNT_2_VAR_1", "path": "Engine", "fmt": {"bix": 56, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #2, variant 1"},
-    {"id": "TL_MISFIRE_COUNT_3_VAR_1", "path": "Engine", "fmt": {"bix": 64, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #3, variant 1"},
-    {"id": "TL_MISFIRE_COUNT_4_VAR_1", "path": "Engine", "fmt": {"bix": 72, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #4, variant 1"},
-    {"id": "TL_MISFIRE_COUNT_5_VAR_1", "path": "Engine", "fmt": {"bix": 80, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #5, variant 1"},
-    {"id": "TL_MISFIRE_COUNT_6_VAR_1", "path": "Engine", "fmt": {"bix": 88, "len": 8, "max": 255, "unit": "scalar" }, "name": "Misfire count #6, variant 1"}
-  ]},
-{ "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2201"}, "freq": 5,
-  "signals": [
-    {"id": "TL_ATF_T", "path": "Transmission", "fmt": {"bix": 208, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Automatic transmission fluid temperature"}
-  ]},
-{ "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2221"}, "freq": 1,
-  "signals": [
-    {"id": "TL_GEAR_1D", "path": "Transmission", "fmt": {"bix": 184, "len": 8, "max": 255, "unit": "scalar" }, "name": "Current gear"}
-  ]}
-]
+{
+  "commands": [
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2203"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_TRANS_OIL_P2_PCM",
+          "path": "Transmission",
+          "fmt": {
+            "bix": 72,
+            "len": 8,
+            "max": 255,
+            "unit": "kilopascal"
+          },
+          "name": "Transmission oil pressure sensor 2"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2240"
+      },
+      "freq": 30,
+      "signals": [
+        {
+          "id": "TL_BAT_DIST",
+          "path": "Battery",
+          "fmt": {
+            "bix": 80,
+            "len": 32,
+            "max": 250000,
+            "unit": "kilometers"
+          },
+          "name": "Distance traveled since last charge"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2610"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_GENERATOR_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 184,
+            "len": 8,
+            "max": 100,
+            "mul": 100,
+            "div": 255,
+            "unit": "percent"
+          },
+          "name": "Generator"
+        },
+        {
+          "id": "TL_AC_CLU_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 262,
+            "len": 1,
+            "max": 1,
+            "unit": "offon"
+          },
+          "name": "A/C clutch"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2611"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_AIRGAS_RAT_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 64,
+            "len": 16,
+            "max": 29.4,
+            "mul": 29.4,
+            "div": 65535,
+            "nullmax": 29.4,
+            "unit": "scalar"
+          },
+          "name": "Air/gas ratio"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2612"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_VTEC_VALVE_CTRL_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 175,
+            "len": 1,
+            "max": 1,
+            "unit": "offon"
+          },
+          "name": "VTEC valve control"
+        },
+        {
+          "id": "TL_CURRENT_GEAR_VAR_2",
+          "path": "Transmission",
+          "fmt": {
+            "bix": 352,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Current gear var.2"
+        },
+        {
+          "id": "TL_CURRENT_GEAR_VAR_3",
+          "path": "Transmission",
+          "fmt": {
+            "bix": 368,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Current gear var.3"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2613"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_AC_P",
+          "path": "Climate",
+          "fmt": {
+            "bix": 120,
+            "len": 16,
+            "max": 4000,
+            "unit": "kilopascal"
+          },
+          "name": "A/C pressure"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2615"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_ACTIVE_CYL_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 400,
+            "len": 8,
+            "max": 6,
+            "unit": "scalar"
+          },
+          "name": "Active cylinders"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2660"
+      },
+      "freq": 30,
+      "signals": [
+        {
+          "id": "TL_ODO_PCM",
+          "path": "Trips",
+          "fmt": {
+            "bix": 344,
+            "len": 24,
+            "max": 16777215,
+            "unit": "kilometers"
+          },
+          "name": "Odometer",
+          "suggestedMetric": "odometer"
+        },
+        {
+          "id": "TL_RUNTM_PCM",
+          "path": "Clocks",
+          "fmt": {
+            "bix": 368,
+            "len": 16,
+            "max": 65535,
+            "unit": "seconds"
+          },
+          "name": "Time since engine start",
+          "description": "How long it's been since the engine started."
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2661"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_FUELAIR_CAR_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 64,
+            "len": 16,
+            "max": 29.4,
+            "div": 2229.08163265,
+            "unit": "scalar"
+          },
+          "name": "Fuel/air commanded equivalence ratio"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2662"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_KNOCK_CTRL_PCM",
+          "path": "ECU",
+          "fmt": {
+            "bix": 80,
+            "len": 8,
+            "max": 2,
+            "mul": 2,
+            "div": 255,
+            "unit": "scalar"
+          },
+          "name": "Knock control"
+        },
+        {
+          "id": "TL_VTC_DUTY_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 224,
+            "len": 8,
+            "max": 100,
+            "mul": 100,
+            "div": 255,
+            "unit": "percent"
+          },
+          "name": "Variable valve timing duty"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2663"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_MIS_CNT_1_VAR_3_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 160,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #1, variant 3"
+        },
+        {
+          "id": "TL_MIS_CNT_2_VAR_3_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 176,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #2, variant 3"
+        },
+        {
+          "id": "TL_MIS_CNT_3_VAR_3_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 192,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #3, variant 3"
+        },
+        {
+          "id": "TL_MIS_CNT_4_VAR_3_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 208,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #4, variant 3"
+        },
+        {
+          "id": "TL_MIS_CNT_5_VAR_3_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 224,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #5, variant 3"
+        },
+        {
+          "id": "TL_MIS_CNT_6_VAR_3_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 240,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #6, variant 3"
+        },
+        {
+          "id": "TL_MIS_1_PCM",
+          "path": "ECU",
+          "fmt": {
+            "bix": 272,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count, cylinder 1"
+        },
+        {
+          "id": "TL_MIS_2_PCM",
+          "path": "ECU",
+          "fmt": {
+            "bix": 288,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count, cylinder 2"
+        },
+        {
+          "id": "TL_MIS_3_PCM",
+          "path": "ECU",
+          "fmt": {
+            "bix": 304,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count, cylinder 3"
+        },
+        {
+          "id": "TL_MIS_4_PCM",
+          "path": "ECU",
+          "fmt": {
+            "bix": 320,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count, cylinder 4"
+        },
+        {
+          "id": "TL_MIS_5_PCM",
+          "path": "ECU",
+          "fmt": {
+            "bix": 336,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count, cylinder 5"
+        },
+        {
+          "id": "TL_MIS_6_PCM",
+          "path": "ECU",
+          "fmt": {
+            "bix": 352,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count, cylinder 6"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "2666"
+      },
+      "freq": 5,
+      "signals": [
+        {
+          "id": "TL_OIL_LEVEL_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 48,
+            "len": 8,
+            "max": 127.5,
+            "div": 2,
+            "unit": "millimeters"
+          },
+          "name": "Engine oil level"
+        },
+        {
+          "id": "TL_EOT_VAR_3_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 88,
+            "len": 8,
+            "max": 215,
+            "min": -40,
+            "add": -40,
+            "unit": "celsius"
+          },
+          "name": "Engine oil temperature, variant 3"
+        },
+        {
+          "id": "TL_EOT_VAR_4_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 112,
+            "len": 8,
+            "max": 215,
+            "min": -40,
+            "add": -40,
+            "unit": "celsius"
+          },
+          "name": "Engine oil temperature, variant 4"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "266C"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_MIS_CNT_1_VAR_1_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 48,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #1, variant 1"
+        },
+        {
+          "id": "TL_MIS_CNT_2_VAR_1_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 56,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #2, variant 1"
+        },
+        {
+          "id": "TL_MIS_CNT_3_VAR_1_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 64,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #3, variant 1"
+        },
+        {
+          "id": "TL_MIS_CNT_4_VAR_1_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 72,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #4, variant 1"
+        },
+        {
+          "id": "TL_MIS_CNT_5_VAR_1_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 80,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #5, variant 1"
+        },
+        {
+          "id": "TL_MIS_CNT_6_VAR_1_PCM",
+          "path": "Engine",
+          "fmt": {
+            "bix": 88,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #6, variant 1"
+        }
+      ]
+    },
+    {
+      "hdr": "DA0E",
+      "rax": "0E",
+      "dbg": true,
+      "cmd": {
+        "22": "266D"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_AIR_FUEL_MIXTURE",
+          "path": "Fuel",
+          "fmt": {
+            "bix": 72,
+            "len": 8,
+            "max": 127,
+            "div": 2,
+            "unit": "percent"
+          },
+          "name": "Air-fuel mixture heater"
+        }
+      ]
+    },
+    {
+      "hdr": "DA10",
+      "rax": "10",
+      "dbg": true,
+      "cmd": {
+        "22": "2610"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_GENERATOR",
+          "path": "Engine",
+          "fmt": {
+            "bix": 184,
+            "len": 8,
+            "max": 100,
+            "mul": 100,
+            "div": 255,
+            "unit": "percent"
+          },
+          "name": "Generator"
+        },
+        {
+          "id": "TL_AC_CLUTCH",
+          "path": "Engine",
+          "fmt": {
+            "bix": 262,
+            "len": 1,
+            "max": 1,
+            "unit": "offon"
+          },
+          "name": "A/C clutch"
+        }
+      ]
+    },
+    {
+      "hdr": "DA10",
+      "rax": "10",
+      "dbg": true,
+      "cmd": {
+        "22": "2611"
+      },
+      "freq": 5,
+      "signals": [
+        {
+          "id": "TL_FUEL_AIR_RATIO",
+          "path": "Fuel",
+          "fmt": {
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Fuel/air commanded equivalence ratio"
+        },
+        {
+          "id": "TL_AIRGAS_RATIO",
+          "path": "Engine",
+          "fmt": {
+            "bix": 64,
+            "len": 16,
+            "max": 29.4,
+            "mul": 29.4,
+            "div": 65535,
+            "unit": "scalar"
+          },
+          "name": "Air/gas ratio"
+        }
+      ]
+    },
+    {
+      "hdr": "DA10",
+      "rax": "10",
+      "dbg": true,
+      "cmd": {
+        "22": "2612"
+      },
+      "freq": 0.25,
+      "signals": [
+        {
+          "id": "TL_VTEC_SOL",
+          "path": "Engine",
+          "fmt": {
+            "bix": 175,
+            "len": 1,
+            "max": 1,
+            "unit": "offon"
+          },
+          "name": "VTEC solenoid valve"
+        },
+        {
+          "id": "TL_VTEC_PSW",
+          "path": "Engine",
+          "fmt": {
+            "bix": 174,
+            "len": 1,
+            "max": 1,
+            "unit": "offon"
+          },
+          "name": "VTEC pressure switch"
+        }
+      ]
+    },
+    {
+      "hdr": "DA10",
+      "rax": "10",
+      "dbg": true,
+      "cmd": {
+        "22": "2660"
+      },
+      "freq": 5,
+      "signals": [
+        {
+          "id": "TL_ODO",
+          "path": "Trips",
+          "fmt": {
+            "bix": 344,
+            "len": 24,
+            "max": 16777215,
+            "unit": "kilometers"
+          },
+          "name": "Odometer",
+          "suggestedMetric": "odometer"
+        },
+        {
+          "id": "TL_RUNTM",
+          "path": "Clocks",
+          "fmt": {
+            "bix": 368,
+            "len": 16,
+            "max": 65535,
+            "unit": "seconds"
+          },
+          "name": "Time since engine start",
+          "description": "How long it's been since the engine started."
+        }
+      ]
+    },
+    {
+      "hdr": "DA10",
+      "rax": "10",
+      "dbg": true,
+      "cmd": {
+        "22": "2661"
+      },
+      "freq": 0.25,
+      "signals": [
+        {
+          "id": "TL_FUELAIR_CAR",
+          "path": "Engine",
+          "fmt": {
+            "bix": 64,
+            "len": 16,
+            "max": 29.4,
+            "div": 2229.08163265,
+            "unit": "scalar"
+          },
+          "name": "Fuel/air commanded equivalence ratio"
+        }
+      ]
+    },
+    {
+      "hdr": "DA10",
+      "rax": "10",
+      "dbg": true,
+      "cmd": {
+        "22": "2662"
+      },
+      "freq": 0.25,
+      "signals": [
+        {
+          "id": "TL_KNOCK_CONTROL",
+          "path": "Engine",
+          "fmt": {
+            "bix": 80,
+            "len": 8,
+            "max": 2,
+            "mul": 2,
+            "div": 255,
+            "unit": "unknown"
+          },
+          "name": "Knock control",
+          "description": "ECU's determination of fuel quality."
+        },
+        {
+          "id": "TL_VTC_DUTY",
+          "path": "Engine",
+          "fmt": {
+            "bix": 224,
+            "len": 8,
+            "max": 100,
+            "mul": 100,
+            "div": 255,
+            "unit": "percent"
+          },
+          "name": "Variable timing control duty",
+          "description": "How long the valve is energized versus how long it's not energized, expressed as a percentage. The higher the duty percentage, the more the cam timing is advanced toward its maximum potential."
+        }
+      ]
+    },
+    {
+      "hdr": "DA10",
+      "rax": "10",
+      "dbg": true,
+      "cmd": {
+        "22": "2663"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_MIS_1",
+          "path": "Engine",
+          "fmt": {
+            "bix": 272,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #1"
+        },
+        {
+          "id": "TL_MIS_2",
+          "path": "Engine",
+          "fmt": {
+            "bix": 288,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #2"
+        },
+        {
+          "id": "TL_MIS_3",
+          "path": "Engine",
+          "fmt": {
+            "bix": 304,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #3"
+        },
+        {
+          "id": "TL_MIS_4",
+          "path": "Engine",
+          "fmt": {
+            "bix": 320,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #4"
+        },
+        {
+          "id": "TL_MIS_5",
+          "path": "Engine",
+          "fmt": {
+            "bix": 336,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #5"
+        },
+        {
+          "id": "TL_MIS_6",
+          "path": "Engine",
+          "fmt": {
+            "bix": 352,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #6"
+        }
+      ]
+    },
+    {
+      "hdr": "DA11",
+      "rax": "11",
+      "dbg": true,
+      "cmd": {
+        "22": "2610"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_GEN",
+          "path": "Engine",
+          "fmt": {
+            "bix": 184,
+            "len": 8,
+            "max": 100,
+            "mul": 20,
+            "div": 51,
+            "unit": "percent"
+          },
+          "name": "Generator"
+        },
+        {
+          "id": "TL_AC_CLU",
+          "path": "Engine",
+          "fmt": {
+            "bix": 262,
+            "len": 1,
+            "max": 1,
+            "unit": "offon"
+          },
+          "name": "Air conditioner clutch"
+        }
+      ]
+    },
+    {
+      "hdr": "DA11",
+      "rax": "11",
+      "dbg": true,
+      "cmd": {
+        "22": "2611"
+      },
+      "freq": 5,
+      "signals": [
+        {
+          "id": "TL_AIRGAS_RATIO_V2",
+          "path": "Engine",
+          "fmt": {
+            "bix": 64,
+            "len": 16,
+            "max": 29.4,
+            "mul": 29.4,
+            "div": 65535,
+            "unit": "scalar"
+          },
+          "name": "Air/gas ratio"
+        }
+      ]
+    },
+    {
+      "hdr": "DA11",
+      "rax": "11",
+      "dbg": true,
+      "cmd": {
+        "22": "2612"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_VTEC_VALVE_CTRL",
+          "path": "Engine",
+          "fmt": {
+            "bix": 175,
+            "len": 1,
+            "max": 1,
+            "unit": "offon"
+          },
+          "name": "VTEC valve control",
+          "description": "VTEC works by switching between two (or sometimes three) different camshaft profiles by engaging or disengaging a mechanism that locks the valve rocker arms together. When VTEC is OFF, the engine operates using the standard cam profile, which is typically optimized for fuel efficiency and low-end torque. When VTEC is ON, the system switches to a high-performance cam profile that allows the valves to open wider and for a longer duration, enabling better airflow at higher RPMs for increased power."
+        }
+      ]
+    },
+    {
+      "hdr": "DA11",
+      "rax": "11",
+      "dbg": true,
+      "cmd": {
+        "22": "2613"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_EVAP_PC_LOAD",
+          "path": "Engine",
+          "fmt": {
+            "bix": 48,
+            "len": 8,
+            "max": 99.61,
+            "mul": 100,
+            "div": 255,
+            "unit": "percent"
+          },
+          "name": "Evaporative purge control load"
+        },
+        {
+          "id": "TL_AC_P_RAW_CNT",
+          "path": "Engine",
+          "fmt": {
+            "bix": 120,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Air conditioning pressure, raw count"
+        }
+      ]
+    },
+    {
+      "hdr": "DA11",
+      "rax": "11",
+      "dbg": true,
+      "cmd": {
+        "22": "2660"
+      },
+      "freq": 5,
+      "signals": [
+        {
+          "id": "TL_RUNTM_V2",
+          "path": "Clocks",
+          "fmt": {
+            "bix": 368,
+            "len": 16,
+            "max": 65535,
+            "unit": "seconds"
+          },
+          "name": "Time since engine start",
+          "description": "How long it's been since the engine started."
+        }
+      ]
+    },
+    {
+      "hdr": "DA11",
+      "rax": "11",
+      "dbg": true,
+      "cmd": {
+        "22": "2661"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_ELD_ELEC_LOAD_DUTY",
+          "path": "Engine",
+          "fmt": {
+            "bix": 136,
+            "len": 8,
+            "max": 127,
+            "div": 2,
+            "unit": "amps"
+          },
+          "name": "Electric load detector current"
+        }
+      ]
+    },
+    {
+      "hdr": "DA11",
+      "rax": "11",
+      "dbg": true,
+      "cmd": {
+        "22": "2662"
+      },
+      "freq": 5,
+      "signals": [
+        {
+          "id": "TL_KNOCK_CONTROL_V2",
+          "path": "Engine",
+          "fmt": {
+            "bix": 80,
+            "len": 8,
+            "max": 1.99,
+            "mul": 1.99,
+            "div": 255,
+            "unit": "scalar"
+          },
+          "name": "Knock control"
+        },
+        {
+          "id": "TL_CAT_T",
+          "path": "Engine",
+          "fmt": {
+            "bix": 96,
+            "len": 16,
+            "max": 1500,
+            "min": -40,
+            "div": 10,
+            "add": -40,
+            "unit": "celsius"
+          },
+          "name": "Catalyst temperature"
+        }
+      ]
+    },
+    {
+      "hdr": "DA11",
+      "rax": "11",
+      "dbg": true,
+      "cmd": {
+        "22": "2663"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_MISFIRE_COUNT_1_VAR_3",
+          "path": "Engine",
+          "fmt": {
+            "bix": 160,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #1, variant 3"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_2_VAR_3",
+          "path": "Engine",
+          "fmt": {
+            "bix": 176,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #2, variant 3"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_3_VAR_3",
+          "path": "Engine",
+          "fmt": {
+            "bix": 192,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #3, variant 3"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_4_VAR_3",
+          "path": "Engine",
+          "fmt": {
+            "bix": 208,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #4, variant 3"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_5_VAR_3",
+          "path": "Engine",
+          "fmt": {
+            "bix": 224,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #5, variant 3"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_6_VAR_3",
+          "path": "Engine",
+          "fmt": {
+            "bix": 240,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #6, variant 3"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_1_VAR_2",
+          "path": "Engine",
+          "fmt": {
+            "bix": 272,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #1, variant 2"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_2_VAR_2",
+          "path": "Engine",
+          "fmt": {
+            "bix": 288,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #2, variant 2"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_3_VAR_2",
+          "path": "Engine",
+          "fmt": {
+            "bix": 304,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #3, variant 2"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_4_VAR_2",
+          "path": "Engine",
+          "fmt": {
+            "bix": 320,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #4, variant 2"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_5_VAR_2",
+          "path": "Engine",
+          "fmt": {
+            "bix": 336,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #5, variant 2"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_6_VAR_2",
+          "path": "Engine",
+          "fmt": {
+            "bix": 352,
+            "len": 16,
+            "max": 65535,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #6, variant 2"
+        }
+      ]
+    },
+    {
+      "hdr": "DA11",
+      "rax": "11",
+      "dbg": true,
+      "cmd": {
+        "22": "266C"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_MISFIRE_COUNT_1_VAR_1",
+          "path": "Engine",
+          "fmt": {
+            "bix": 48,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #1, variant 1"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_2_VAR_1",
+          "path": "Engine",
+          "fmt": {
+            "bix": 56,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #2, variant 1"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_3_VAR_1",
+          "path": "Engine",
+          "fmt": {
+            "bix": 64,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #3, variant 1"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_4_VAR_1",
+          "path": "Engine",
+          "fmt": {
+            "bix": 72,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #4, variant 1"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_5_VAR_1",
+          "path": "Engine",
+          "fmt": {
+            "bix": 80,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #5, variant 1"
+        },
+        {
+          "id": "TL_MISFIRE_COUNT_6_VAR_1",
+          "path": "Engine",
+          "fmt": {
+            "bix": 88,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Misfire count #6, variant 1"
+        }
+      ]
+    },
+    {
+      "hdr": "DA1D",
+      "rax": "1D",
+      "dbg": true,
+      "cmd": {
+        "22": "2201"
+      },
+      "freq": 5,
+      "signals": [
+        {
+          "id": "TL_ATF_T",
+          "path": "Transmission",
+          "fmt": {
+            "bix": 208,
+            "len": 8,
+            "max": 215,
+            "min": -40,
+            "add": -40,
+            "unit": "celsius"
+          },
+          "name": "Automatic transmission fluid temperature"
+        }
+      ]
+    },
+    {
+      "hdr": "DA1D",
+      "rax": "1D",
+      "dbg": true,
+      "cmd": {
+        "22": "2221"
+      },
+      "freq": 1,
+      "signals": [
+        {
+          "id": "TL_GEAR_1D",
+          "path": "Transmission",
+          "fmt": {
+            "bix": 184,
+            "len": 8,
+            "max": 255,
+            "unit": "scalar"
+          },
+          "name": "Current gear"
+        }
+      ]
+    }
+  ]
 }
