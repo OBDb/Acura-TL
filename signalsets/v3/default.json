@@ -1,4 +1,40 @@
 { "commands": [
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"01": "10"}, "freq": 5, "filter": { "from": 2009, "to": 2014 },
+  "signals": [
+    {"id": "TL_MAF", "path": "Engine", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "gramsPerSecond" }, "name": "Mass air flow", "suggestedMetric": "massAirFlow"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"01": "2F"}, "freq": 1, "filter": { "from": 2009, "to": 2014 },
+  "signals": [
+    {"id": "TL_FLI", "path": "Fuel", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Fuel tank level", "suggestedMetric": "fuelTankLevel"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"01": "33"}, "freq": 0.5, "filter": { "from": 2009, "to": 2014 },
+  "signals": [
+    {"id": "TL_BARO", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Barometric pressure"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"01": "3C"}, "freq": 1, "filter": { "from": 2009, "to": 2014 },
+  "signals": [
+    {"id": "TL_CATEMP11", "path": "Engine", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature bank 1 sensor 1"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"01": "3D"}, "freq": 1, "filter": { "from": 2009, "to": 2014 },
+  "signals": [
+    {"id": "TL_CATEMP21", "path": "Engine", "fmt": { "len": 16, "max": 6513.5, "min": -40, "div": 10, "add": -40, "unit": "celsius" }, "name": "Catalyst temperature bank 2 sensor 1"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"01": "42"}, "freq": 5, "filter": { "from": 2009, "to": 2014 },
+  "signals": [
+    {"id": "TL_VPWR", "path": "Battery", "fmt": { "len": 16, "max": 65.535, "div": 1000, "unit": "volts" }, "name": "Control module voltage", "suggestedMetric": "starterBatteryVoltage"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"01": "43"}, "freq": 5, "filter": { "from": 2009, "to": 2014 },
+  "signals": [
+    {"id": "TL_LOAD_ABS", "path": "Engine", "fmt": { "len": 16, "max": 25700, "mul": 100, "div": 255, "unit": "percent" }, "name": "Absolute load value", "suggestedMetric": "absoluteEngineLoad"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"01": "49"}, "freq": 10, "filter": { "from": 2009, "to": 2014 },
+  "signals": [
+    {"id": "TL_APP_D", "path": "Control", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Accelerator pedal position D"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"01": "4A"}, "freq": 10, "filter": { "from": 2009, "to": 2014 },
+  "signals": [
+    {"id": "TL_APP_E", "path": "Control", "fmt": { "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Accelerator pedal position E"}
+  ]},
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2203"}, "freq": 1, "filter": { "from": 2007, "to": 2008 },
   "signals": [
     {"id": "TL_TRANS_OIL_P2_PCM", "path": "Transmission", "fmt": {"bix": 72, "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Transmission oil pressure sensor 2"}
@@ -193,6 +229,14 @@
     {"id": "TL_TP_FL", "path": "Tires", "fmt": {"bix": 80,  "len": 16, "max": 500, "div": 10, "unit": "kilopascal" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
     {"id": "TL_TP_RR", "path": "Tires", "fmt": {"bix": 96,  "len": 16, "max": 500, "div": 10, "unit": "kilopascal" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
     {"id": "TL_TP_RL", "path": "Tires", "fmt": {"bix": 112, "len": 16, "max": 500, "div": 10, "unit": "kilopascal" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"}
+  ]},
+{ "hdr": "DA28", "rax": "28", "dbg": true, "cmd": {"22": "4004"}, "freq": 1, "filter": { "from": 2007, "to": 2008 },
+  "signals": [
+    {"id": "TL_BRK_SW", "path": "Electrical", "fmt": {"bix": 127, "len": 1, "max": 1, "unit": "offon" }, "name": "Brake switch"}
+  ]},
+{ "hdr": "DA28", "rax": "28", "dbg": true, "cmd": {"22": "4005"}, "freq": 1, "filter": { "from": 2007, "to": 2008 },
+  "signals": [
+    {"id": "TL_BRK_P", "path": "Electrical", "fmt": {"bix": 56, "len": 16, "max": 120, "add": -25, "unit": "bars" }, "name": "Brake pressure"}
   ]},
 { "hdr": "DA60", "dbg": true, "cmd": {"22": "7028"}, "freq": 5, "filter": { "from": 2007, "to": 2008 },
   "signals": [
