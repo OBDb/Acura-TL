@@ -87,10 +87,6 @@
   "signals": [
     {"id": "TL_VTEC_CTRL", "path": "ECU", "fmt": {"bix": 168, "len": 8, "max": 255, "unit": "scalar" }, "name": "Variable valve control"}
   ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2615"}, "freq": 1,
-  "signals": [
-    {"id": "TL_ACTIVE_CYL", "path": "Engine", "fmt": {"bix": 400, "len": 8, "max": 6, "unit": "scalar" }, "name": "Active cylinders"}
-  ]},
 { "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2660"}, "freq": 5,
   "signals": [
     {"id": "TL_ODO",   "path": "Trips",  "fmt": {"bix": 344, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer",                "suggestedMetric": "odometer"},
@@ -176,17 +172,6 @@
 { "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2221"}, "freq": 1,
   "signals": [
     {"id": "TL_GEAR_1D", "path": "Transmission", "fmt": {"bix": 184, "len": 8, "max": 255, "unit": "scalar" }, "name": "Current gear"}
-  ]},
-{ "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2660"}, "freq": 30,
-  "signals": [
-    {"id": "TL_ODO_V2", "path": "Trips", "fmt": {"bix": 344, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
-  ]},
-{ "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2663"}, "freq": 1,
-  "signals": [
-    {"id": "TL_MIS_CNT_1", "path": "Engine", "fmt": {"bix": 272, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count 1"},
-    {"id": "TL_MIS_CNT_2", "path": "Engine", "fmt": {"bix": 288, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count 2"},
-    {"id": "TL_MIS_CNT_3", "path": "Engine", "fmt": {"bix": 304, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count 3"},
-    {"id": "TL_MIS_CNT_4", "path": "Engine", "fmt": {"bix": 320, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count 4"}
   ]}
 ]
 }
