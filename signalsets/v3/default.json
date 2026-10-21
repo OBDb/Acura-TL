@@ -1,7 +1,7 @@
 { "commands": [
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2203"}, "freq": 1,
   "signals": [
-    {"id": "TL_EOP_PCM", "path": "Engine", "fmt": {"bix": 72, "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Oil pressure"}
+    {"id": "TL_TRANS_OIL_P2_PCM", "path": "Transmission", "fmt": {"bix": 72, "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Transmission oil pressure sensor 2"}
   ]},
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2240"}, "freq": 30,
   "signals": [
@@ -90,7 +90,8 @@
   ]},
 { "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2612"}, "freq": 0.25,
   "signals": [
-    {"id": "TL_VTEC_CTRL", "path": "ECU", "fmt": {"bix": 168, "len": 8, "max": 255, "unit": "scalar" }, "name": "Variable valve control"}
+    {"id": "TL_VTEC_PSW", "path": "Engine", "fmt": {"bix": 174, "len": 1, "max": 1, "unit": "offon" }, "name": "VTEC pressure switch"},
+    {"id": "TL_VTEC_SOL", "path": "Engine", "fmt": {"bix": 175, "len": 1, "max": 1, "unit": "offon" }, "name": "VTEC solenoid valve"}
   ]},
 { "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2660"}, "freq": 5,
   "signals": [
