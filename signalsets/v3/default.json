@@ -186,28 +186,31 @@
 { "hdr": "DA1E", "rax": "1E", "dbg": true, "cmd": {"22": "3086"}, "freq": 0.25,
   "signals": [
     {"id": "TL_TRANS_GEAR", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
-          "0":  { "description": "Park",     "value": "P" },
-          "1":  { "description": "Drive 1",  "value": "D1" },
-          "2":  { "description": "Drive 2",  "value": "D2" },
-          "3":  { "description": "Drive 3",  "value": "D3" },
-          "4":  { "description": "Drive 4",  "value": "D4" },
-          "5":  { "description": "Drive 5",  "value": "D5" },
-          "6":  { "description": "Drive 6",  "value": "D6" },
-          "7":  { "description": "Drive 7",  "value": "D7" },
-          "8":  { "description": "Drive 8",  "value": "D8" },
-          "9":  { "description": "Drive 9",  "value": "D9" },
-          "10": { "description": "Drive 10", "value": "D10" },
-          "11": { "description": "Neutral",  "value": "N" },
-          "12": { "description": "Reverse",  "value": "R" }
+          "0":  { "description": "Park",    "value": "P" },
+          "1":  { "description": "Drive 1", "value": "D1" },
+          "2":  { "description": "Drive 2", "value": "D2" },
+          "3":  { "description": "Drive 3", "value": "D3" },
+          "4":  { "description": "Drive 4", "value": "D4" },
+          "5":  { "description": "Drive 5", "value": "D5" },
+          "6":  { "description": "Drive 6", "value": "D6" },
+          "7":  { "description": "Drive 7", "value": "D7" },
+          "8":  { "description": "Drive 8", "value": "D8" },
+          "9":  { "description": "Drive 9", "value": "D9" },
+          "14": { "description": "Neutral", "value": "N" },
+          "15": { "description": "Reverse", "value": "R" }
         }}
     }
   ]},
 { "hdr": "DA26", "rax": "26", "dbg": true, "cmd": {"22": "6001"}, "freq": 15,
   "signals": [
-    {"id": "TL_TP_FR", "path": "Tires", "fmt": {"bix": 64,  "len": 16, "max": 65535, "unit": "kilopascal" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
-    {"id": "TL_TP_FL", "path": "Tires", "fmt": {"bix": 80,  "len": 16, "max": 65535, "unit": "kilopascal" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "TL_TP_RR", "path": "Tires", "fmt": {"bix": 96,  "len": 16, "max": 65535, "unit": "kilopascal" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
-    {"id": "TL_TP_RL", "path": "Tires", "fmt": {"bix": 112, "len": 16, "max": 65535, "unit": "kilopascal" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"}
+    {"id": "TL_TP_FR", "path": "Tires", "fmt": {"bix": 64,  "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Front right tire pressure",    "suggestedMetric": "frontRightTirePressure"},
+    {"id": "TL_TP_FL", "path": "Tires", "fmt": {"bix": 80,  "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Front left tire pressure",     "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "TL_TP_RR", "path": "Tires", "fmt": {"bix": 96,  "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Rear right tire pressure",     "suggestedMetric": "rearRightTirePressure"},
+    {"id": "TL_TP_RL", "path": "Tires", "fmt": {"bix": 112, "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Rear left tire pressure",      "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "TL_TT_FR", "path": "Tires", "fmt": {"bix": 192, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "TL_TT_FL", "path": "Tires", "fmt": {"bix": 200, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "TL_TT_RR", "path": "Tires", "fmt": {"bix": 208, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "TL_TT_RL", "path": "Tires", "fmt": {"bix": 216, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"}
   ]},
 { "hdr": "DA28", "rax": "28", "dbg": true, "cmd": {"22": "4004"}, "freq": 1,
   "signals": [
@@ -217,7 +220,7 @@
   "signals": [
     {"id": "TL_BRK_P", "path": "Electrical", "fmt": {"bix": 56, "len": 16, "max": 120, "add": -25, "unit": "bars" }, "name": "Brake pressure"}
   ]},
-{ "hdr": "DA60", "rax": "60", "dbg": true, "cmd": {"22": "7028"}, "freq": 5,
+{ "hdr": "DA60", "rax": "60", "fcm1": true, "dbg": true, "cmd": {"22": "7028"}, "freq": 5,
   "signals": [
     {"id": "TL_AAT", "path": "Climate", "fmt": {"bix": 132, "len": 12, "max": 2047, "min": -40, "sign": true, "nullmax": 141, "unit": "fahrenheit" }, "name": "Outside air temperature"}
   ]},
@@ -225,9 +228,17 @@
   "signals": [
     {"id": "TL_FUEL_LEVEL", "path": "Fuel", "fmt": {"bix": 96, "len": 16, "max": 655, "div": 100, "unit": "liters" }, "name": "Fuel level", "suggestedMetric": "fuelTankLevel"}
   ]},
-{ "hdr": "DA60", "rax": "60", "dbg": true, "cmd": {"22": "7060"}, "freq": 0.1,
+{ "hdr": "DA60", "rax": "60", "dbg": true, "cmd": {"22": "7060"}, "freq": 30,
   "signals": [
-    {"id": "TL_MAINT_OIL_FLT", "path": "Engine", "fmt": {"bix": 112, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, oil & filter"}
+    {"id": "TL_MAINT_OIL_FLT",   "path": "Engine", "fmt": {"bix": 112, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, oil & filter"},
+    {"id": "TL_MAINT_SPARK",     "path": "Engine", "fmt": {"bix": 128, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, spark plugs & valves"},
+    {"id": "TL_MAINT_INSP",      "path": "Engine", "fmt": {"bix": 208, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, general inspection"},
+    {"id": "TL_MAINT_TIRE",      "path": "Tires",  "fmt": {"bix": 224, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, tire rotation"},
+    {"id": "TL_MAINT_CABIN_FLT", "path": "Engine", "fmt": {"bix": 240, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, cabin filter"},
+    {"id": "TL_MAINT_TRANS_FLD", "path": "Engine", "fmt": {"bix": 256, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, transmission fluid"},
+    {"id": "TL_MAINT_COOL",      "path": "Engine", "fmt": {"bix": 288, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, engine coolant"},
+    {"id": "TL_MAINT_BRK_FLD",   "path": "Engine", "fmt": {"bix": 320, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, brake fluid"},
+    {"id": "TL_MAINT_AIR_CLN",   "path": "Engine", "fmt": {"bix": 336, "len": 16, "max": 9999, "unit": "unknown" }, "name": "Maintenance, air cleaner"}
   ]}
 ]
 }
